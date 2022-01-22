@@ -1,0 +1,26 @@
+---
+spring:
+  profiles:
+    active: [EN,dog,qa]
+usr:
+  name: Paddy
+  password: GoodGoody
+  jdbcUrl: amazingpaddy.github.io
+
+---
+spring:
+  profiles: dev
+
+usr:
+  name: Paddy-dev
+  password: GoodGoody-dev
+  jdbcUrl: amazingpaddy.github.io
+
+---
+spring:
+  profiles: qa
+
+usr:
+  name: Paddy-qa
+  password: GoodGoody-qa
+  jdbcUrl: amazingpaddy.github.io
