@@ -4,14 +4,16 @@ import guru.springframework.sfgdi.datasource.FakeDatasource;
 import guru.springframework.sfgdi.repositories.EnglishGreetingRepository;
 import guru.springframework.sfgdi.repositories.EnglishGreetingRepositoryImpl;
 import guru.springframework.sfgdi.services.*;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.*;
 
+@EnableConfigurationProperties(SfgConstructorConfig.class)
 @ImportResource("classpath:sfd-config.xml")
 @Configuration
 public class GreetingServiceConfig {
 
     @Bean
-    FakeDatasource fakeDatasource(final SfgConfiguration config) {
+    FakeDatasource fakeDatasource(final SfgConstructorConfig config) {
         FakeDatasource fakeDatasource = new FakeDatasource();
         fakeDatasource.setName(config.getName());
         fakeDatasource.setPassword(config.getPassword());
